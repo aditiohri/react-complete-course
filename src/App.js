@@ -12,7 +12,7 @@ class App extends Component {
     justifyContent: 'center',
     alignContent: 'center',
     textAlign: 'center',
-    height: '100vh'
+    height: '80vh'
   }
 
   state = {
