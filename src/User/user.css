@@ -1,0 +1,13 @@
+.inputStyle {
+  background-color: pink;
+  font-size: 22;
+  padding: 4px;
+  margin: 22px;
+}
+
+.userName {
+    color: white;
+    background-color: purple;
+    text-transform: uppercase;
+    padding: 1rem;
+}
