@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import UserInput from './User/UserInput';
 import UserOutput from './User/UserOutput';
 import ValidationComponent from './ValidationComponent/ValidationComponent';
+import CharComponent from './CharComponent/CharComponent';
 
 class App extends Component {
 
@@ -33,13 +34,26 @@ class App extends Component {
   render() {
 
     let output = null;
+    let chars = null;
 
     if (this.state.output) {
       output = (
         <p>
           {this.state.output}
         </p>
+      );
+
+      chars = (
+        <div>
+          {this.state.output.split('').map((letter) => (
+            <CharComponent 
+            letter={letter}
+            />
+          ))}
+
+        </div>
       )
+      
     }
 
     return (
@@ -58,6 +72,7 @@ class App extends Component {
         <div>
           <ValidationComponent text={this.state.output} />
         </div>
+        {chars}
       </div>
     );
   }

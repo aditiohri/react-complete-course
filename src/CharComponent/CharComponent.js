@@ -1,10 +1,10 @@
 import React from 'react';
 import './CharComponent.css'
 
-export default function CharComponent({ props }) {
+export default function CharComponent({ letter }) {
     return (
-        <div>
-            
-        </div>
+        <p>
+            {letter}
+        </p>
     )
 }
