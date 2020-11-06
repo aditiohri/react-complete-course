@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import UserInput from './User/UserInput';
 import UserOutput from './User/UserOutput';
+import ValidationComponent from './ValidationComponent/ValidationComponent';
 
 class App extends Component {
 
@@ -35,9 +36,9 @@ class App extends Component {
 
     if (this.state.output) {
       output = (
-        <div>
+        <p>
           {this.state.output}
-        </div>
+        </p>
       )
     }
 
@@ -53,6 +54,9 @@ class App extends Component {
         </div>
         <div>
           {output}
+        </div>
+        <div>
+          <ValidationComponent text={this.state.output} />
         </div>
       </div>
     );
