@@ -31,6 +31,12 @@ class App extends Component {
     })
   }
 
+  deleteLetterHandler = (idx) => {
+    const text = this.state.output.split('');
+    text.splice(idx, 1);
+    this.setState({ output: text.join() });
+  }
+
   render() {
 
     let output = null;
@@ -45,9 +51,10 @@ class App extends Component {
 
       chars = (
         <div>
-          {this.state.output.split('').map((letter) => (
+          {this.state.output.split('').map((letter, idx) => (
             <CharComponent 
             letter={letter}
+            deleteLetterHandler={this.deleteLetterHandler.bind(this, idx)}
             />
           ))}
 
