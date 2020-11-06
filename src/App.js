@@ -17,7 +17,8 @@ class App extends Component {
   state = {
     users: [
       {name: 'KatyaZamo'}
-    ]
+    ],
+    output: null
   }
 
   switchNameHandler = (event) => {
@@ -27,8 +28,18 @@ class App extends Component {
       ]
     })
   }
-  
+
   render() {
+
+    let output = null;
+
+    if (this.state.output) {
+      output = (
+        <div>
+          {this.state.output}
+        </div>
+      )
+    }
 
     return (
       <div style={this.divStyle}>
@@ -37,6 +48,12 @@ class App extends Component {
           userName={this.state.users[0].name}
         />
         <UserOutput userName={this.state.users[0].name} />
+        <div>
+          <input type="text" onChange={(event) => this.setState({ output: event.target.value })} />
+        </div>
+        <div>
+          {output}
+        </div>
       </div>
     );
   }
