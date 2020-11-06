@@ -66,6 +66,7 @@ class App extends Component {
           <input
             type="text"
             onChange={(event) => this.setState({ output: event.target.value })}
+            value={this.state.output}
           />
         </div>
         <div>{output}</div>
